@@ -1,0 +1,178 @@
+<?php $__env->startSection('content'); ?>
+
+  <div class="page-content row">
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3> <?php echo e($pageTitle); ?> <small><?php echo e($pageNote); ?></small></h3>
+      </div>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo e(URL::to('dashboard')); ?>"><?php echo e(Lang::get('core.home')); ?></a></li>
+		<li><a href="<?php echo e(URL::to('taxgroupsdetails?return='.$return)); ?>"><?php echo e($pageTitle); ?></a></li>
+        <li class="active"><?php echo e(Lang::get('core.addedit')); ?> </li>
+      </ul>
+	  	  
+    </div>
+ 
+ 	<div class="page-content-wrapper">
+
+		<ul class="parsley-error-list">
+			<?php foreach($errors->all() as $error): ?>
+				<li><?php echo e($error); ?></li>
+			<?php endforeach; ?>
+		</ul>
+<div class="sbox animated fadeInRight">
+	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
+	<div class="sbox-content"> 	
+
+		 <?php echo Form::open(array('url'=>'taxgroupsdetails/save?return='.$return, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')); ?>
+
+<div class="col-md-12">
+						<fieldset><legend> TAX_GROUPS_DETAILS</legend>
+									
+				  <div class="form-group hidethis " style="display:none;"> 
+					<label for="Taxgroupdetail Id" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Taxgroupdetail Id', (isset($fields['taxgroupdetail_id']['language'])? $fields['taxgroupdetail_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('taxgroupdetail_id', $row['taxgroupdetail_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group hidethis " style="display:none;"> 
+					<label for="Taxgroup Id" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Taxgroup Id', (isset($fields['taxgroup_id']['language'])? $fields['taxgroup_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('taxgroup_id', $row['taxgroup_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Tax Class" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Tax Class', (isset($fields['taxclass_id']['language'])? $fields['taxclass_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <select name='taxclass_id' rows='5' id='taxclass_id' class='select2 '   ></select> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Tax Category" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Tax Category', (isset($fields['taxcategory_id']['language'])? $fields['taxcategory_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <select name='taxcategory_id' rows='5' id='taxcategory_id' class='select2 '   ></select> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Tax Code" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Tax Code', (isset($fields['taxcode_id']['language'])? $fields['taxcode_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <select name='taxcode_id' rows='5' id='taxcode_id' class='select2 '   ></select> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Start Date" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Start Date', (isset($fields['start_date']['language'])? $fields['start_date']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('start_date', $row['start_date'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="End Date" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('End Date', (isset($fields['end_date']['language'])? $fields['end_date']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('end_date', $row['end_date'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Active" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Active', (isset($fields['active']['language'])? $fields['active']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  
+					<?php $active = explode(',',$row['active']);
+					$active_opt = array( 'Y' => 'Yes' ,  'N' => 'No' , ); ?>
+					<select name='active' rows='5'   class='select2 '  > 
+						<?php 
+						foreach($active_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['active'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> </fieldset>
+			</div>
+			
+			
+
+		
+			<div style="clear:both"></div>	
+				
+					
+				  <div class="form-group">
+					<label class="col-sm-4 text-right">&nbsp;</label>
+					<div class="col-sm-8">	
+					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> <?php echo e(Lang::get('core.sb_apply')); ?></button>
+					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> <?php echo e(Lang::get('core.sb_save')); ?></button>
+					<button type="button" onclick="location.href='<?php echo e(URL::to('taxgroupsdetails?return='.$return)); ?>' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  <?php echo e(Lang::get('core.sb_cancel')); ?> </button>
+					</div>	  
+			
+				  </div> 
+		 
+		 <?php echo Form::close(); ?>
+
+	</div>
+</div>		 
+</div>	
+</div>			 
+   <script type="text/javascript">
+	$(document).ready(function() { 
+		
+		
+        $("#taxclass_id").jCombo("<?php echo e(URL::to('taxgroupsdetails/comboselect?filter=tax_class_t:taxclass_id:taxclass_name')); ?>",
+        {  selected_value : '<?php echo e($row["taxclass_id"]); ?>' });
+        
+        $("#taxcategory_id").jCombo("<?php echo e(URL::to('taxgroupsdetails/comboselect?filter=tax_category_t:taxcategory_id:taxcategory_name')); ?>",
+        {  selected_value : '<?php echo e($row["taxcategory_id"]); ?>' });
+        
+        $("#taxcode_id").jCombo("<?php echo e(URL::to('taxgroupsdetails/comboselect?filter=tax_code_t:taxcode_id:taxcode_name')); ?>",
+        {  selected_value : '<?php echo e($row["taxcode_id"]); ?>' });
+         
+
+		$('.removeCurrentFiles').on('click',function(){
+			var removeUrl = $(this).attr('href');
+			$.get(removeUrl,function(response){});
+			$(this).parent('div').empty();	
+			return false;
+		});		
+		
+	});
+	</script>		 
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

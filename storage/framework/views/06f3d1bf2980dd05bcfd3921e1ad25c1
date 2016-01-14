@@ -1,0 +1,157 @@
+<?php $__env->startSection('content'); ?>
+
+  <div class="page-content row">
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3> <?php echo e($pageTitle); ?> <small><?php echo e($pageNote); ?></small></h3>
+      </div>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo e(URL::to('dashboard')); ?>"><?php echo e(Lang::get('core.home')); ?></a></li>
+		<li><a href="<?php echo e(URL::to('accounttype?return='.$return)); ?>"><?php echo e($pageTitle); ?></a></li>
+        <li class="active"><?php echo e(Lang::get('core.addedit')); ?> </li>
+      </ul>
+	  	  
+    </div>
+ 
+ 	<div class="page-content-wrapper">
+
+		<ul class="parsley-error-list">
+			<?php foreach($errors->all() as $error): ?>
+				<li><?php echo e($error); ?></li>
+			<?php endforeach; ?>
+		</ul>
+<div class="sbox animated fadeInRight">
+	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
+	<div class="sbox-content"> 	
+
+		 <?php echo Form::open(array('url'=>'accounttype/save?return='.$return, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')); ?>
+
+<div class="col-md-12">
+						<fieldset><legend> ACCOUNT_TYPE</legend>
+									
+				  <div class="form-group  " > 
+					<label for="Accounttype Id" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Accounttype Id', (isset($fields['accounttype_id']['language'])? $fields['accounttype_id']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('accounttype_id', $row['accounttype_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Accounttype Name" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Accounttype Name', (isset($fields['accounttype_name']['language'])? $fields['accounttype_name']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('accounttype_name', $row['accounttype_name'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Description" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Description', (isset($fields['description']['language'])? $fields['description']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  <?php echo Form::text('description', $row['description'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Start Date" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Start Date', (isset($fields['start_date']['language'])? $fields['start_date']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  
+				<div class="input-group m-b" style="width:150px !important;">
+					<?php echo Form::text('start_date', $row['start_date'],array('class'=>'form-control date')); ?>
+
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				</div> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="End Date" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('End Date', (isset($fields['end_date']['language'])? $fields['end_date']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  
+				<div class="input-group m-b" style="width:150px !important;">
+					<?php echo Form::text('end_date', $row['end_date'],array('class'=>'form-control date')); ?>
+
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				</div> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> 					
+				  <div class="form-group  " > 
+					<label for="Active" class=" control-label col-md-4 text-left"> 
+					<?php echo SiteHelpers::activeLang('Active', (isset($fields['active']['language'])? $fields['active']['language'] : array())); ?>	
+					</label>
+					<div class="col-md-6">
+					  
+					<?php $active = explode(',',$row['active']);
+					$active_opt = array( 'Y' => 'Yes' ,  'N' => 'No' , ); ?>
+					<select name='active' rows='5' required  class='select2 '  > 
+						<?php 
+						foreach($active_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['active'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
+					 </div> 
+					 <div class="col-md-2">
+					 	
+					 </div>
+				  </div> </fieldset>
+			</div>
+			
+			
+
+		
+			<div style="clear:both"></div>	
+				
+					
+				  <div class="form-group">
+					<label class="col-sm-4 text-right">&nbsp;</label>
+					<div class="col-sm-8">	
+					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> <?php echo e(Lang::get('core.sb_apply')); ?></button>
+					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> <?php echo e(Lang::get('core.sb_save')); ?></button>
+					<button type="button" onclick="location.href='<?php echo e(URL::to('accounttype?return='.$return)); ?>' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  <?php echo e(Lang::get('core.sb_cancel')); ?> </button>
+					</div>	  
+			
+				  </div> 
+		 
+		 <?php echo Form::close(); ?>
+
+	</div>
+</div>		 
+</div>	
+</div>			 
+   <script type="text/javascript">
+	$(document).ready(function() { 
+		
+		 
+
+		$('.removeCurrentFiles').on('click',function(){
+			var removeUrl = $(this).attr('href');
+			$.get(removeUrl,function(response){});
+			$(this).parent('div').empty();	
+			return false;
+		});		
+		
+	});
+	</script>		 
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
