@@ -103,7 +103,7 @@
 </div>
 </div>
 
-<div class="theme-config">
+<!--div class="theme-config">
     <div class="theme-config-box">
         <div class="spin-icon">
             <i class="fa fa-cogs fa-spin"></i>
@@ -123,7 +123,7 @@
             
         </div>
     </div>
-</div>
+</div /* *vijay* removed the theme-config */ -->
 
 {{ Sitehelpers::showNotification() }} 
 <script type="text/javascript">

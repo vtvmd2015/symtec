@@ -2,7 +2,7 @@
 <nav role="navigation" class="navbar-default navbar-static-side">
      <div class="sidebar-collapse">				  
        <ul id="sidemenu" class="nav expanded-menu">
-		<li class="logo-header" >
+		<!--li class="logo-header" >
 		 <a class="navbar-brand" href="{{ URL::to('dashboard')}}">
 		 	@if(file_exists(public_path().'/sximo/images/'.CNF_LOGO) && CNF_LOGO !='')
 		 	<img src="{{ asset('sximo/images/'.CNF_LOGO)}}" alt="{{ CNF_APPNAME }}" />
@@ -10,16 +10,23 @@
 			<img src="{{ asset('sximo/images/logo.png')}}" alt="{{ CNF_APPNAME }}" />
 			@endif
 		 </a>
-		</li>
-		<li class="nav-header">
+		</li  /* *vijay* just img enough */ -->
+                <center> <img src="{{ asset('sximo/images/'.CNF_LOGO)}}" alt="{{ CNF_APPNAME }} " width="190" height="60"> </center>
+                
+		<li class="nav-header" >
 			<div class="dropdown profile-element" style="text-align:center;"> <span>
 				{!! SiteHelpers::avatar() !!}
 				 </span>
 				<a href="{{ URL::to('user/profile') }}" >
-				<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Session::get('fid') }}</strong>
+				<span class="clear"> <span class="block m-t-xs"> 
+				<!--strong class="font-bold">{{ Session::get('fid') }}</strong-->
+				<font size=3 color="darkred">{{ Session::get('fid') }}</font>
+
 				 <br />
-				{{ Lang::get('core.lastlogin') }} : <br />
-				<small>{{ date("H:i F j, Y", strtotime(Session::get('ll'))) }}</small>				
+                                 <font size=2 color="seablue"> {{ Lang::get('core.lastlogin') }} : </font> <br />
+				<!--small{{ date("H:i F j, Y", strtotime(Session::get('ll'))) }}</small-->				
+				<font size=2 color="seablue"> {{ date("H:i F j, Y", strtotime(Session::get('ll'))) }} </font>
+						
 				 </span> 
 				 </span>
 				 </a>

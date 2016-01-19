@@ -12,9 +12,10 @@
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   line-height: 1.42857143;
-  background: #2f4050;
+  background: #bfdda7;    /* *vijay* side menu try this also baf6bd */
  
-  color: #676a6c; overflow-x:hidden
+  color: #660033; /* *vijay* all body font color */
+  overflow-x:hidden
 }
 a { color:#1ab394;}
 h1,h2,h3,h4,h5,h6 {
@@ -43,20 +44,32 @@ h3,h4,h5 {
   font-weight: 600;
 }
 .nav > li > a {
-  color: #a7b1c2;
-  font-weight: 500;
-  font-size:11px;
-  padding: 14px 20px 14px 25px;
+  color: #ee806e; /* *vijay* left side menu letter */
+  box-shadow: 5px 6px 3px #888888;
+  font-weight: bold;
+  font-size:12px;
+  padding: 2px 15px 7px 1px;
+
+  border:1.5px solid #DBBAF6;  
+  background:#fff;
+  border-radius:10px;
+
 }
 .nav.navbar-right > li > a {
   color: #999c9e;
 }
 .nav > li.active > a {
-  color: #ffffff;
+  color: #fff; /* *vijay* left side menu after click */
+   text-decoration: underline;
+    font-size:12px;
+      font-weight: bold;
+        text-shadow: none;
+        background:#590C54;        
+        
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #293846;
+  background-color: lightslategray; /* *vijay* left side menu mouse over */
   color: white;
 }
 .nav.navbar-top-links > li > a:hover,
@@ -167,8 +180,9 @@ h3,h4,h5 {
 .sxim-init .nav-header {
   transition: all 0.5s;
 }
-.nav > li.active {
-  background: #293846;
+.nav > li.active { 
+  background:  #FF7A5A; /* *vijay* left side menu opened */
+  
 }
 .nav.nav-second-level > li.active {
   border: none;
@@ -237,11 +251,11 @@ h3,h4,h5 {
   border-bottom: none !important;
 }
 .nav-second-level li a {
-  padding: 7px 10px 7px 10px;
-  padding-left: 52px; font-weight:400;
+  padding: 1px 1px 7px 10px; /* *vijay* left side menu second level */
+  padding-left: 42px; font-weight:400;
 }
 .nav-third-level li a {
-  padding-left: 62px; font-size:11px;
+  padding-left: 52px; font-size:11px; /* *vijay* left side menu third level */
 }
 .nav-second-level li:last-child {
   margin-bottom: 10px;
@@ -301,7 +315,7 @@ body.minimize-sidemenu .navbar-default .nav > li > .nav-second-level li a {
 }
 .navbar-fixed-top,
 .navbar-static-top {
-  background: #f3f3f4;
+  background: #bfdda7;
 }
 .fixed-nav #wrapper {
   margin-top: 60px;
@@ -1333,7 +1347,7 @@ code {
 
 /* BACKGROUNDS */
 .gray-bg {
-  background-color: #f3f3f4;
+  background-color: #sdfsdf;
 }
 .white-bg {
   background-color: #ffffff;
@@ -2029,10 +2043,10 @@ box-shadow:1px 1px 0 rgba(255, 255, 255, 0.2) inset;
 .page-header { padding:20px 15px 20px; margin:0; background:#fff; border-top:solid 1px #ddd }
 fieldset { margin:10px 0;}
 fieldset legend { font-size:16px; padding:10px 0; font-weight:500;}
-.table-responsive { background:#fff;  border:solid 1px #ddd; overflow-x:auto;}
+.table-responsive { background:#fff;  border:solid 1px #ddd; overflow-x:auto; }
 .toolbar { margin:10px 0; clear:both; text-align:right;}
 .toolbar-line { margin:15px 0; clear:both; }
-.page-content-wrapper { padding:0 15px;}
+.page-content-wrapper { padding:0 15px; } 
 .ribon-sximo { margin:20px 0;}
 
 .panel { background:none !important;; border-color:none !important;}

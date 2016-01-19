@@ -1,17 +1,19 @@
 <div class="row  ">
+    
         <nav style="margin-bottom: 0;" role="navigation" class="navbar navbar-static-top nav-inside">
         <div class="navbar-header">
-            <a href="javascript:void(0)" class="navbar-minimalize minimalize-btn btn btn-primary "><i class="fa fa-bars"></i> </a>
-            
+            <a href="javascript:void(0)" class="navbar-minimalize minimalize-btn btn btn-primary ">
+                <i class="fa fa-bars"></i> </a>
+                
         </div>
-
+            
             <ul class="nav navbar-top-links navbar-right">
+                
             <li>
 
             </li>
          <li>   
-			<a href="#" data-toggle="dropdown" class="dropdown-toggle count-info" aria-expanded="true"
-            >
+		<a href="#" data-toggle="dropdown" class="dropdown-toggle count-info" aria-expanded="true" >
 		        <i class="fa fa-envelope"></i>  <span class="notif-alert label label-danger">0</span>
 		    </a>
                 <ul class="dropdown-menu dropdown-alerts notif-value" code="{{ url()}}">
@@ -30,7 +32,11 @@
 		</li>	
 		@endif			
 		@if(Auth::user()->group_id == 1)
-		<li class="user dropdown"><a class="dropdown-toggle" href="javascript:void(0)"  data-toggle="dropdown"><i class="fa fa-desktop"></i> <span>{{ Lang::get('core.m_controlpanel') }}</span><i class="caret"></i></a>
+                <!--/* *vijay* top border increase */ -->
+		<li class="user dropdown" 
+                    style="height:65px;" > 
+                    
+                    <a class="dropdown-toggle" href="javascript:void(0)"  data-toggle="dropdown"><i class="fa fa-desktop"></i> <span>{{ Lang::get('core.m_controlpanel') }}</span><i class="caret"></i></a>
 		  <ul class="dropdown-menu dropdown-menu-right icons-right">
 		   
 		  	<li><a href="{{ URL::to('sximo/config')}}"><i class="fa  fa-wrench"></i> {{ Lang::get('core.m_setting') }}</a></li>
@@ -64,6 +70,21 @@
 	 				
 				
             </ul>
+            <!--/* *vijay* top header LABEL */ -->
+            <center> <h3 
+                    style=" box-shadow:1px 2px 5px 2px darkkhaki; 
+                            width:250px;
+                            margin-top: 20px;
+                            margin-left: -200px;
+                            height: 25px;
+                            font-weight: bold; 
+                            border:1.5px solid #DBBAF6;  
+                            background:#fff;
+                            border-radius:20px; 
+                    ">  ERP Application 
+                </h3>
+            </center>
 
         </nav>
+    
         </div>
